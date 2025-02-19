@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    @import 'tailwindcss';
+
+    @custom-variant dark (&:where(.dark, .dark *));
+
+    @theme {
+      --font-sans: 'Open Sans';
+    }
+
+    @layer components {
+      .hero-image {
+        @apply rounded-2xl shadow-2xl;
+        transform: rotateX(5deg) rotateY(-10deg) rotateZ(2deg);
+      }
+
+      .hero-reflection {
+        @apply absolute inset-0 left-20 top-10 rounded-2xl bg-gradient-to-bl from-indigo-200 to-pink-200 dark:from-gray-700 dark:to-gray-500;
+        transform: scale(1.1) rotateX(5deg) rotateY(-10deg) rotateZ(2deg);
+      }
+    }
+
+    @utility container {
+      padding-inline: 0.75rem;
+      margin-inline: auto;
+
+      @variant sm {
+        padding-inline: 2rem;
+      }
+    }
+  </style>
+  
+</head>
+
+<body class="bg-gray-200 dark:bg-gray-800">
+  <main class="grid place-items-center min-h-screen">
+    <section class="flex flex-col items-center  w-full p-3 gap-y-4 sm:gap-y-6">
+      <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14 sm:size-16 -rotate-6 text-violet-600 dark:text-violet-100">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>        
+    </a>
+    <div class="w-full p-4 bg-white border border-gray-200 rounded-md shadow-sm sm:w-96 sm:p-6 sm:rounded-lg dark:bg-gray-900 dark:border-black dark:shadow-none">
+      <form class="flex flex-col gap-y-4 sm:gap-y-6">
+        <div class="flex flex-col gap-y-1">
+          <label for="email" class="text-sm font-medium text-gray-600 sm:text-base dark:text-gray-300">Email</label>
+          <input type="email" id="email"
+            class="px-4 py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:border-indigo-600 focus:ring-1 sm:text-base sm:rounded-lg dark:focus:ring-violet-400 dark:bg-gray-700 dark:border-0 dark:text-violet-100 dark:placeholder:text-gray-400">
+        </div>
+        <div class="flex flex-col gap-y-1">
+          <label for="password" class="text-sm font-medium text-gray-600 sm:text-base dark:text-gray-300">Password</label>
+          <input type="password" id="password"
+            class="px-4 py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:border-indigo-600 focus:ring-1 sm:text-base sm:rounded-lg dark:focus:ring-violet-400 dark:bg-gray-700 dark:border-0 dark:text-violet-100 dark:placeholder:text-gray-400">
+        </div>
+        <div class="flex flex-col gap-y-1">
+          <label for="passwordConfirmation" class="text-sm font-medium text-gray-600 sm:text-base dark:text-gray-300">Password
+            Confirmation</label>
+          <input type="password" id="passwordConfirmation"
+            class="px-4 py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:border-indigo-600 focus:ring-1 sm:text-base sm:rounded-lg dark:focus:ring-violet-400 dark:bg-gray-700 dark:border-0 dark:text-violet-100 dark:placeholder:text-gray-400">
+        </div>
+        <button class="text-sm px-6 py-2 mt-2 font-semibold bg-violet-700 rounded-md text-violet-50 hover:bg-violet-300 sm:text-base sm:rounded-lg sm:mt-1">
+          Sing up
+         </button>  
+      </form>
+      <p class="mt-6 text-sm text-center text-gray-700 sm:mt-8 dark:text-gray-300">
+        Lorem ipsum dolor sit amet consectetur adipisicing.
+        <a href="#" class="font-medium text-indigo-500 hover:text-indigo-800 dark:text-violet-400 dark:hover:text-violet-300">
+          Log in
+        </a>
+      </p>
+    </div>
+  </section>
+  </main>
+</body>
+
+</html>

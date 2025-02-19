@@ -1,0 +1,261 @@
+<!doctype html>
+<html class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Playlist</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    @import 'tailwindcss';
+
+    @custom-variant dark (&:where(.dark, .dark *));
+
+    @theme {
+      --font-sans: 'Open Sans';
+    }
+
+    @layer components {
+      .hero-image {
+        @apply rounded-2xl shadow-2xl;
+        transform: rotateX(5deg) rotateY(-10deg) rotateZ(2deg);
+      }
+
+      .hero-reflection {
+        @apply absolute inset-0 left-20 top-10 rounded-2xl bg-gradient-to-bl from-indigo-200 to-pink-200 dark:from-gray-700 dark:to-gray-500;
+        transform: scale(1.1) rotateX(5deg) rotateY(-10deg) rotateZ(2deg);
+      }
+    }
+
+    @utility container {
+      padding-inline: 0.75rem;
+      margin-inline: auto;
+
+      @variant sm {
+        padding-inline: 2rem;
+      }
+    }
+  </style>
+  
+</head>
+<body class="dark:bg-gray-800">
+  <header class="py-1.5 sm:py-4 fixed top-0 inset-x-0 sm:static z-10 bg-white border-gray-200  border-b sm:border-0 dark:border-0 dark:bg-gray-900">
+    <div class="container flex items-center justify-between gap-x-10">
+      <a href="#" class="flex items-center gap-x-1 sm:gap-x-2">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="size-8 sm:size-12 -rotate-6 text-violet-600 dark:text-white"><path fill="currentColor" d="M1.16 16.466c.049 0 .09-.039.098-.093l.27-2.022l-.27-2.069a.103.103 0 0 0-.099-.093c-.05 0-.094.04-.1.093l-.236 2.069l.236 2.021c.006.055.05.094.1.094m-.887-.769c.048 0 .088-.036.095-.09l.209-1.256l-.209-1.28c-.007-.053-.047-.09-.095-.09c-.051 0-.09.037-.098.09L0 14.351l.174 1.256c.008.053.047.09.098.09m1.948-3.8a.122.122 0 0 0-.12-.114a.12.12 0 0 0-.119.114l-.224 2.454l.224 2.364a.12.12 0 0 0 .12.112a.121.121 0 0 0 .12-.113l.254-2.363zm.832 5.026a.143.143 0 0 0 .14-.133l.241-2.439l-.24-2.522a.143.143 0 0 0-.141-.132a.14.14 0 0 0-.14.133l-.213 2.521l.212 2.439a.14.14 0 0 0 .141.133m.958.039a.162.162 0 0 0 .162-.152l.226-2.459l-.226-2.34a.162.162 0 0 0-.162-.151a.16.16 0 0 0-.16.152l-.2 2.34l.2 2.458a.16.16 0 0 0 .16.152m1.36-2.61l-.212-3.805a.184.184 0 0 0-.182-.173a.183.183 0 0 0-.182.173l-.188 3.805l.188 2.458a.183.183 0 0 0 .364 0zm.581 2.635a.201.201 0 0 0 .201-.192v.002l.199-2.444l-.199-4.676a.203.203 0 0 0-.405 0l-.174 4.676l.175 2.443a.201.201 0 0 0 .203.19m.98-7.91a.222.222 0 0 0-.223.212l-.162 5.065l.162 2.418a.221.221 0 0 0 .223.211a.22.22 0 0 0 .223-.211l.185-2.418l-.185-5.065a.22.22 0 0 0-.223-.212m.989 7.911a.24.24 0 0 0 .244-.232v.002l.17-2.404l-.17-5.235a.24.24 0 0 0-.243-.232a.238.238 0 0 0-.243.232l-.153 5.235l.153 2.404c.002.129.11.23.243.23m.997-.002a.26.26 0 0 0 .263-.252v.002l.157-2.381l-.157-5.103a.26.26 0 0 0-.263-.25a.26.26 0 0 0-.264.25l-.138 5.103l.139 2.38c.003.14.119.25.263.25m1.431-2.63l-.142-4.917a.28.28 0 0 0-.284-.27a.28.28 0 0 0-.285.271l-.127 4.916l.127 2.366a.28.28 0 0 0 .285.27a.28.28 0 0 0 .284-.273v.003zm.586 2.64c.165 0 .301-.13.304-.29l.129-2.349l-.129-5.85a.301.301 0 0 0-.304-.291a.303.303 0 0 0-.305.291l-.115 5.848l.115 2.352c.003.158.14.289.305.289m1.009-9.33a.322.322 0 0 0-.327.31l-.133 6.382l.134 2.315a.32.32 0 0 0 .325.308a.32.32 0 0 0 .324-.311v.003l.146-2.315l-.146-6.381a.32.32 0 0 0-.323-.311m.922 9.332l8.182.004C22.678 17 24 15.732 24 14.167c0-1.564-1.322-2.832-2.953-2.832c-.404 0-.79.079-1.142.22C19.673 9.003 17.44 7 14.718 7c-.665 0-1.314.126-1.887.339c-.223.083-.283.168-.285.333v8.989a.349.349 0 0 0 .32.335"/></svg>
+        
+        <span class="text-xl sm:text-2xl font-black dark:text-violet-100 ">Sleep Here</span>
+      </a>
+      <nav class="hidden sm:block grow">
+        <ul class="flex items-center gap-x-8">
+          <li class="mr-auto">
+            <a href="#" class="font-semibold hover:text-violet-600 dark:text-violet-100 dark:hover-text-violet-200">Library</a>
+          </li>
+          <li>
+            <a href="#" class="font-semibold hover:text-violet-600 dark:text-violet-100 dark:hover-text-violet-200">Log In</a>
+          </li>
+          <li>
+            <a href="#" class="px-3 py-2 font-semibold rounded-md bg-violet-600 text-violet-50 hover:bg-violet-700">
+              Sign Up
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="flex sm:hidden">
+        <nav id="nav"
+          class="absolute inset-x-0 bg-white border-b top-full hidden target:block peer dark:border-0 dark:bg-gray-900">
+          <ul class="flex flex-col items-center gap-y-2 px-3 pb-3">
+            <li class="w-full">
+              <a href="#"
+                class="inline-block w-full p-2 text-sm font-semibold text-center rounded-md hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">
+                Library
+              </a>
+            </li>
+            <li class="w-full">
+              <a href="#"
+                class="inline-block w-full p-2 text-sm font-semibold text-center rounded-md hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">
+                Log In
+              </a>
+            </li>
+            <li class="w-full">
+              <a href="#"
+                class="inline-block w-full px-3 py-2 text-sm font-semibold text-center bg-indigo-600 rounded-md text-indigo-50 hover:bg-indigo-700">
+                Sign Up
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#nav"
+          class="p-2 hover:bg-gray-100 rounded-md -mr-1.5 peer-target:hidden peer-target:[&+a]:block dark:hover:bg-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="size-6 dark:text-white">
+            <path fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+        <a href="#" class="hidden p-2 hover:bg-gray-100 rounded-md -mr-1.5 dark:hover:bg-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="size-6 dark:text-white">
+            <path fill-rule="evenodd"
+              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="flex flex-col pt-24 pb-12 gap-y-8 md:gap-y-12 sm:py-16">
+      <div class="container max-w-screen-sm">
+          <h1 class="text-4xl font-black text-center sm:text-5xl hover:text-violet-600 dark:text-violet-100">
+              Sleep Here
+          </h1>
+          <p class="mt-2 text-center text-gray-600 sm:mt-3 sm:text-lg dark:text-gray-300">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, a?
+          </p>
+      </div>
+      <div class="container grid grid-cols-1 lg:gap-x-8 gap-y-8 lg:grid-cols-3">
+        <div class=" flex flex-col gap-y-4 lg:col-span-1">
+          <div class="flex items-center justfy-between gap-x-4">
+            <h3 class="font-semibold sm:text-lg hover:text-violet-500 dark:text-violet-100">
+              Videos
+            </h3>
+            <div class="flex gap-x-2">
+              <a href="#" target="_blank" class="hover:text-violet-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 sm:size-8 dark:text-violet-100 dark:hover:text-violet-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 0 0-8.862 12.872M12.75 3.031a9 9 0 0 1 6.69 14.036m0 0-.177-.529A2.25 2.25 0 0 0 17.128 15H16.5l-.324-.324a1.453 1.453 0 0 0-2.328.377l-.036.073a1.586 1.586 0 0 1-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 0 1-5.276 3.67m0 0a9 9 0 0 1-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
+                </svg>
+                
+              </a>
+              <a href="#" target="_blank" class="hover:text-violet-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 sm:size-8 dark:text-violet-100 dark:hover:text-violet-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                </svg>
+                
+              </a>
+            </div>
+          </div>
+          <ul class="flex flex-col gap-y-1"> 
+            <li>
+              <a href="#" class="flex items-center justify-between w-full p-3 text-violet-600 rounded-lg gap-x-4 hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                <span class="text-sm font-medium truncate sm:text-base">
+                  1.Started with YouTube.
+                </span>
+                <span  class="text-sm-gray-500 sm:text-base">
+                  5:30
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between w-full p-3 text-violet-600 rounded-lg gap-x-4 hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                <span class="text-sm font-medium truncate sm:text-base">
+                  1.Started with Social club.
+                </span>
+                <span class="text-sm-gray-500 sm:text-base">
+                  5:30
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between w-full p-3 text-violet-600 rounded-lg gap-x-4 hover:bg-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                <span class="text-sm font-medium truncate sm:text-base">
+                  1.Started with Text Instruction.
+                </span>
+                <span class="text-sm-gray-500 sm:text-base">
+                  5:30
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-y-6 md:gap-y-8 lg:col-span-2">
+          <iframe class="w-full aspect-video rounded-md sm:rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/Zhq_ThHG2gA?si=VTjlvs9yKUlfyR4D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <article class="prose prose-h3:m-0 prose-p:mt-2 max-w-none prose-p:dark:text-gray-300 prose-h3:dark:text-violet-100">
+            <header>
+              <h3>
+                Listen the rain
+              </h3>
+            </header>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, delectus.
+            </p>
+          </article>
+        </div>
+      </div>
+      </section>
+  </main>
+  
+  <footer class="py-6 bg-violet-500 sm:pt-10 sm:pb-8 dark:bg-gray-900">
+    <div class="container flex flex-col gap-y-6 sm:gap-y-8">
+      <div class="flex flex-col gap-10 lg:gap-8 lg:flex-row">
+        <div class="flex flex-col items-start mr-auto lg:max-w-80">
+          <a href="#" class="flex items-center gap-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="size-12 -rotate-6 text-white"><path fill="currentColor" d="M1.16 16.466c.049 0 .09-.039.098-.093l.27-2.022l-.27-2.069a.103.103 0 0 0-.099-.093c-.05 0-.094.04-.1.093l-.236 2.069l.236 2.021c.006.055.05.094.1.094m-.887-.769c.048 0 .088-.036.095-.09l.209-1.256l-.209-1.28c-.007-.053-.047-.09-.095-.09c-.051 0-.09.037-.098.09L0 14.351l.174 1.256c.008.053.047.09.098.09m1.948-3.8a.122.122 0 0 0-.12-.114a.12.12 0 0 0-.119.114l-.224 2.454l.224 2.364a.12.12 0 0 0 .12.112a.121.121 0 0 0 .12-.113l.254-2.363zm.832 5.026a.143.143 0 0 0 .14-.133l.241-2.439l-.24-2.522a.143.143 0 0 0-.141-.132a.14.14 0 0 0-.14.133l-.213 2.521l.212 2.439a.14.14 0 0 0 .141.133m.958.039a.162.162 0 0 0 .162-.152l.226-2.459l-.226-2.34a.162.162 0 0 0-.162-.151a.16.16 0 0 0-.16.152l-.2 2.34l.2 2.458a.16.16 0 0 0 .16.152m1.36-2.61l-.212-3.805a.184.184 0 0 0-.182-.173a.183.183 0 0 0-.182.173l-.188 3.805l.188 2.458a.183.183 0 0 0 .364 0zm.581 2.635a.201.201 0 0 0 .201-.192v.002l.199-2.444l-.199-4.676a.203.203 0 0 0-.405 0l-.174 4.676l.175 2.443a.201.201 0 0 0 .203.19m.98-7.91a.222.222 0 0 0-.223.212l-.162 5.065l.162 2.418a.221.221 0 0 0 .223.211a.22.22 0 0 0 .223-.211l.185-2.418l-.185-5.065a.22.22 0 0 0-.223-.212m.989 7.911a.24.24 0 0 0 .244-.232v.002l.17-2.404l-.17-5.235a.24.24 0 0 0-.243-.232a.238.238 0 0 0-.243.232l-.153 5.235l.153 2.404c.002.129.11.23.243.23m.997-.002a.26.26 0 0 0 .263-.252v.002l.157-2.381l-.157-5.103a.26.26 0 0 0-.263-.25a.26.26 0 0 0-.264.25l-.138 5.103l.139 2.38c.003.14.119.25.263.25m1.431-2.63l-.142-4.917a.28.28 0 0 0-.284-.27a.28.28 0 0 0-.285.271l-.127 4.916l.127 2.366a.28.28 0 0 0 .285.27a.28.28 0 0 0 .284-.273v.003zm.586 2.64c.165 0 .301-.13.304-.29l.129-2.349l-.129-5.85a.301.301 0 0 0-.304-.291a.303.303 0 0 0-.305.291l-.115 5.848l.115 2.352c.003.158.14.289.305.289m1.009-9.33a.322.322 0 0 0-.327.31l-.133 6.382l.134 2.315a.32.32 0 0 0 .325.308a.32.32 0 0 0 .324-.311v.003l.146-2.315l-.146-6.381a.32.32 0 0 0-.323-.311m.922 9.332l8.182.004C22.678 17 24 15.732 24 14.167c0-1.564-1.322-2.832-2.953-2.832c-.404 0-.79.079-1.142.22C19.673 9.003 17.44 7 14.718 7c-.665 0-1.314.126-1.887.339c-.223.083-.283.168-.285.333v8.989a.349.349 0 0 0 .32.335"/></svg>
+            <span class="text-2xl font-black text-white">Sleep Here</span>
+          </a>
+          <p class="mt-2 text-sm text-indigo-200 sm:mt-4 sm:text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, velit?
+          </p>
+        </div>
+        <div class="flex flex-col gap-y-8 sm:gap-x-16 sm:flex-row">
+          <div class="flex flex-col gap-y-3 sm:gap-y-4">
+            <h3 class="font-semibold text-sm uppercase tracking-wider text-white">
+              Sleep sleeps
+            </h3>
+            <ul class="flex flex-col gap-y-1 sm:gap-y-2">
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">Sleep</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">Daylight</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">Night</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-y-3 sm:gap-y-4">
+            <h3 class="font-semibold text-sm uppercase tracking-wider text-white">
+              Configurations
+            </h3>
+            <ul class="flex flex-col gap-y-1 sm:gap-y-2">
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">Settings</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">Keyboard Shortcuts</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">Code</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-y-3 sm:gap-y-4">
+            <h3 class="font-semibold text-sm uppercase tracking-wider text-white">
+              Social
+            </h3>
+            <ul class="flex flex-col gap-y-1 sm:gap-y-2">
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">YouTube</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">Telegram</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm text-indigo-200 hover:text-white sm:text-base">GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-violet-800 text-center text-sm text-indigo-200 sm:pt-8">
+        &copy; 2025 Sleep editor. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
